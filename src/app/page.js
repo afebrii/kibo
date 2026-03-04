@@ -1,12 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import confetti from "canvas-confetti";
 
 export default function KiboPage() {
-  const [noButtonPosition, setNoButtonPosition] = useState(null); // null means it's in the initial flow
+  const [noButtonPosition, setNoButtonPosition] = useState(null);
   const [yesScale, setYesScale] = useState(1);
   const [isAccepted, setIsAccepted] = useState(false);
 
+  // Sound effects
+  const playSound = (url) => {
+    const audio = new Audio(url);
+    audio.volume = 0.5;
+    audio.play().catch(e => console.log("Sound error:", e));
+  };
+
   const handleNoInteraction = () => {
+    // Play funny sound
+    playSound("https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3");
+
     // 1. Perbesar tombol YES
     setYesScale((prev) => prev + 0.4);
 
@@ -14,6 +25,30 @@ export default function KiboPage() {
     const randomTop = Math.floor(Math.random() * 80) + "%";
     const randomLeft = Math.floor(Math.random() * 80) + "%";
     setNoButtonPosition({ top: randomTop, left: randomLeft });
+  };
+
+  const handleYesClick = () => {
+    setIsAccepted(true);
+    playSound("https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3");
+
+    // Confetti effect
+    const duration = 5 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+    const randomInRange = (min, max) => Math.random() * (max - min) + min;
+
+    const interval = setInterval(function () {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      const particleCount = 50 * (timeLeft / duration);
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+    }, 250);
   };
 
   if (isAccepted) {
@@ -35,7 +70,7 @@ export default function KiboPage() {
 
       <div className="flex items-center gap-6">
         <button
-          onClick={() => setIsAccepted(true)}
+          onClick={handleYesClick}
           style={{ transform: `scale(${yesScale})` }}
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-10 rounded-full transition-transform duration-200 shadow-lg z-10"
         >
