@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kibo - Bukber Invitation App 🌙✨
 
-## Getting Started
+Kibo is a fun, interactive web application built with **Next.js** and **Tailwind CSS** designed to send "bukber" (breaking of fast) invitations in a playful way.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Interactive Invitation**: A playful "MAU!" (Yes) and "Enggak" (No) button interaction.
+- **Dynamic Layout**: The "Enggak" button jumpily moves away when hovered or clicked, making it "impossible" to refuse!
+- **Premium Aesthetics**: Beautiful pastel gradients and chibi-style animations for a warm, friendly user experience.
+- **Responsive Design**: Works smoothly on both desktop and mobile devices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Built With
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- [Next.js](https://nextjs.org/) - React framework for building web applications.
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework for rapid UI development.
+- [Giphy](https://giphy.com/) & [Tenor](https://tenor.com/) - For cute, festive animations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏁 Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js (Latest LTS recommended)
+- npm or yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/afebrii/kibo.git
+   ```
 
-## Deploy on Vercel
+2. Navigate to the project directory:
+   ```bash
+   cd kibo
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📸 Preview
+
+The application features:
+- A cute waiting state with a cat GIF.
+- An interactive button area where "MAU!" grows and "Enggak" escapes.
+- A celebratory success screen with a warm sunset gradient.
+
+---
+Made with ❤️ by [afebrii](https://github.com/afebrii)
